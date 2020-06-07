@@ -1,5 +1,8 @@
 # async_app
 
+A simple Django app to simulate distributed async upload of data. The app itself is found in `csv_upload`. `csv_upload.views.upload_csv` handles the transfer of data to a message queue. `csv_upload.tasks.push_data_to_db` processes the data and stores it to a DB in an async fashion.
+
+
 ### Prerequisites
 - Python 3.6
 - Pip
