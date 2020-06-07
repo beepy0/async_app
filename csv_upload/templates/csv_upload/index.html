@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Page</title>
+</head>
+<body>
+    <form action="{% url 'csv_upload:upload_csv' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file1"> Upload a file</label>
+        <input type="file" id="file1" name="file">
+        <small>Only accepts CSV files</small>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+                <p style="color: red"><strong>{{message|safe}}</strong></p>
+            </div>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
