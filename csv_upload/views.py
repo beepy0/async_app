@@ -23,7 +23,7 @@ def upload_csv(request):
     try:
         csv_data = csv_file.read().decode('UTF-8')
     except Exception:
-        return render(request, 'csv_upload/upload_error.html', context={'message': 'Invalid CSV file'})
+        return render(request, 'csv_upload/upload_error.html', context={'message': 'Invalid or broken CSV file'})
     else:
         push_data_to_db.delay(csv_data)
         return render(request, 'csv_upload/upload_success.html')
