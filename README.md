@@ -8,6 +8,7 @@ A simple Django app to simulate distributed async upload of data. The app itself
 - Pip
 - RabbitMQ (can be changed to another service in the Celery settings)
 - Run `pip install -r requirements.txt`
+- Run migrations `python manage.py migrate`
 
 
 Currently uses SQLite but can be plugged to any DB.
